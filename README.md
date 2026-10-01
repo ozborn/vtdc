@@ -2,22 +2,16 @@
 
 VTDC describes reusable criteria for distinguishing viral taxa, composite
 demarcation rules, taxon demarcation profiles, and classification assessments.
-**Creator and initial maintainer: John D. Osborne.**
 
 This is a development scaffold, with 20 provisional VTDC classes and a pinned
 Information Artifact Ontology (IAO) import containing the required BFO and RO
 support. The initial architecture follows the
 [ViralTaxonomy framework](https://chatgpt.com/share/6abea53f-c988-83ea-a0da-e7af2d6e5ce7).
 Definitions are original draft formulations for domain review, not quotations
-or assertions of ICTV approval.
-
-VTDC is a **proposed, unregistered namespace**. Its prospective OBO PURLs are
-identifiers only at this stage; no resolution or OBO Foundry acceptance is
-claimed. No GitHub repository, remote, website, contact email, or ORCID has
-been invented. See [publication tasks](docs/publication.md).
+or assertions of ICTV approval.VTDC is a **proposed, unregistered namespace**. It
+has not yet been submitted for OBO Foundry acceptance.
 
 ## Get started
-
 Requires Java 21, Python 3.11 or later, GNU Make, and internet access for the
 first ROBOT download. No Python packages or Docker image are required.
 
