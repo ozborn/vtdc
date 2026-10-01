@@ -1,0 +1,9 @@
+.tools/
+build/
+releases/
+__pycache__/
+*.pyc
+.DS_Store
+*.owl.bak
+*.owl.tmp
+

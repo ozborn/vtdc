@@ -1,0 +1,7 @@
+{
+  "version": "2026-03-30",
+  "ontology_iri": "http://purl.obolibrary.org/obo/iao.owl",
+  "version_iri": "http://purl.obolibrary.org/obo/iao/2026-03-30/iao.owl",
+  "url": "https://raw.githubusercontent.com/information-artifact-ontology/IAO/v2026-03-30/iao.owl",
+  "sha256": "c27ff2964a2ad8165bc365698b628aae95108411384aa4450e6e1b1e82bf0f41"
+}

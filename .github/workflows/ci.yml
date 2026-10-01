@@ -1,0 +1,36 @@
+name: Ontology quality control
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/cache@v4
+        with:
+          path: .tools/robot.jar
+          key: robot-${{ hashFiles('tools/robot.lock.json') }}
+      - run: make all
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: vtdc-quality-reports
+          path: build/reports/
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vtdc-development-products
+          path: |
+            vtdc.owl
+            vtdc.obo
+            vtdc.json

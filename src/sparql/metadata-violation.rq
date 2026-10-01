@@ -1,0 +1,15 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+SELECT ?ontology ?property WHERE {
+  {
+    ?ontology a owl:Ontology .
+    VALUES ?property { dcterms:title dcterms:description dcterms:creator dcterms:license }
+    FILTER NOT EXISTS { ?ontology ?property ?value . FILTER(STRLEN(STR(?value)) > 0) }
+  }
+  UNION
+  {
+    ?ontology a owl:Ontology ; dcterms:license ?license .
+    FILTER(!isIRI(?license))
+    BIND(dcterms:license AS ?property)
+  }
+}

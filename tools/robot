@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -euo pipefail
+project_root="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
+python3 "$project_root/tools/fetch.py" "$project_root/tools/robot.lock.json" "$project_root/.tools/robot.jar"
+exec java -Xmx2G -jar "$project_root/.tools/robot.jar" "$@"

@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: 'Please cite VTDC and the particular release used; retain source ontology identifiers when citing imported terms.'
+type: dataset
+title: Viral Taxon Demarcation Criteria Ontology
+abstract: 'An ontology of reusable viral taxon demarcation criteria, composite rules, taxon demarcation profiles, and classification assessments.'
+authors:
+  - family-names: Osborne
+    given-names: John D.
+license: CC-BY-4.0
+keywords:
+  - ontology
+  - virus taxonomy
+  - demarcation criteria
+  - VTDC
+# Add repository-code, url, version, date-released, and ORCID once established.

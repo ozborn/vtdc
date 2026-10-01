@@ -1,0 +1,20 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+SELECT ?entity WHERE {
+  ?entity a owl:Class .
+  FILTER(STRSTARTS(STR(?entity), "http://purl.obolibrary.org/obo/VTDC_"))
+  FILTER (
+    NOT EXISTS { ?entity dcterms:creator ?creator . FILTER(STRLEN(STR(?creator)) > 0) } ||
+    NOT EXISTS {
+      ?entity obo:IAO_0000115 ?definition .
+      ?axiom a owl:Axiom ;
+        owl:annotatedSource ?entity ;
+        owl:annotatedProperty obo:IAO_0000115 ;
+        owl:annotatedTarget ?definition ;
+        obo:IAO_0000119 ?source .
+      FILTER(STRLEN(STR(?source)) > 0)
+    }
+  )
+}
+

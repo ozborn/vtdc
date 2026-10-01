@@ -1,0 +1,6 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+SELECT ?entity WHERE {
+  BIND(obo:VTDC_0000001 AS ?entity)
+  FILTER NOT EXISTS { ?entity a owl:Class }
+}

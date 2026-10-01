@@ -1,0 +1,8 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT ?entity WHERE {
+  ?entity a ?type .
+  VALUES ?type { owl:Class owl:ObjectProperty owl:DatatypeProperty owl:AnnotationProperty }
+  FILTER(STRSTARTS(STR(?entity), "http://purl.obolibrary.org/obo/VTDC"))
+  FILTER(!REGEX(STR(?entity), "^http://purl.obolibrary.org/obo/VTDC_[0-9]{7}$"))
+}
+
